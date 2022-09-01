@@ -5,12 +5,16 @@ import HelloWorld from './components/HelloWorld.vue'
 import { appWindow } from '@tauri-apps/api/window';
 import { onMounted } from 'vue';
 
+
 onMounted(async () => {
   await appWindow.setDecorations(false)
+  await appWindow.setFullscreen(true)
+  //tried but has no effect
+  await appWindow.setDecorations(false)
   setTimeout(async () => {
-    await appWindow.setDecorations(true);
     await appWindow.setFocus();
-  }, 1500)
+    await appWindow.setFullscreen(false)
+  }, 2500)
 })
 </script>
 

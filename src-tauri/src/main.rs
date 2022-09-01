@@ -10,8 +10,8 @@ fn main() {
         .setup(|app| {
             let window = app.get_window("main").unwrap();
 
-            #[cfg(any(debug_assertions, feature = "devtools"))]
-            window.open_devtools();
+            // #[cfg(any(debug_assertions, feature = "devtools"))]
+            // window.open_devtools();
 
             Ok(())
         })
